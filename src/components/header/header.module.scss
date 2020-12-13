@@ -1,0 +1,62 @@
+@import "../../styles/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 95px;
+  margin-top: 35px;
+  @include md {
+    margin-bottom: 25px;
+    align-items: flex-end;
+  }
+  &_logo {
+    img {
+      width: 74px;
+    }
+  }
+}
+
+.switch_btn {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 120%;
+  cursor: pointer;
+
+  img {
+    margin-left: 10px;
+    transition: all 0.3s;
+  }
+}
+
+.switch_btn_active {
+  img {
+    transform: rotate(180deg);
+  }
+}
+.languageChangeSection {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.languageChange {
+  position: absolute;
+  top: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.3s;
+  font-size: 16px;
+  &_active {
+    top: 3px;
+    cursor: pointer;
+  }
+}

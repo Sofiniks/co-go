@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import ComingSoon from './ComingSoon';
 import reportWebVitals from './reportWebVitals';
 
+import './styles/_globals.module.scss';
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ComingSoon />,
   document.getElementById('root')
 );
 

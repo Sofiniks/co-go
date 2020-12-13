@@ -1,0 +1,57 @@
+@mixin container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  @include lg {
+    max-width: calc(100vw - 80px);
+  }
+  @media screen and (max-width: 1000px) {
+    max-width: calc(100vw - 60px);
+  }
+  @include sm {
+    max-width: calc(100vw - 20px);
+  }
+}
+
+@mixin h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 130%;
+  font-family: "Montserrat";
+  @include md {
+    font-size: 34px;
+  }
+  @include sm {
+    font-size: 18px;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 415px) {
+    @content;
+  }
+}
+
+@mixin xss {
+  @media screen and (max-width: 335px) {
+    @content;
+  }
+}

@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.footer {
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include md {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+  }
+  &_contacts {
+    display: flex;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &_email,
+  &_phone {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 10px;
+    }
+    p {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+  &_email {
+    margin-top: 17px;
+    @include md {
+      margin-left: 35px;
+      margin-top: 0;
+    }
+    @include sm {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+  &_form {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    @include md {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    p {
+      margin-right: 30px;
+      @include md {
+        margin-bottom: 15px;
+      }
+      @include sm {
+        font-size: 16px;
+        max-width: 190px;
+        margin-right: 0;
+      }
+    }
+    &__container {
+      display: flex;
+      @include sm {
+        flex-direction: column;
+      }
+      input {
+        padding: 13px 16px;
+        width: 300px;
+        border: 1px solid #a0a0a0;
+        border-radius: 4px 0 0 4px;
+        @include sm {
+          margin-bottom: 8px;
+          border-radius: 4px;
+        }
+      }
+      input:invalid {
+        border: 2px solid #b00020;
+      }
+      .form_button {
+        color: #fff;
+        background-color: $black-lighten;
+        font-weight: 500;
+        padding: 13px 16px;
+        border-radius: 0 4px 4px 0;
+        border: 1px solid $black-lighten;
+        cursor: pointer;
+        outline: none;
+        @include sm {
+          border-radius: 4px;
+        }
+      }
+      .form_button_submitted {
+        background-color: #27ae60;
+        border: 1px solid #27ae60;
+      }
+    }
+  }
+}

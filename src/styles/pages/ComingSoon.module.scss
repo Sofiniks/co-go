@@ -1,0 +1,156 @@
+@import "../mixins";
+@import "../variables";
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  @include md {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_img {
+    img {
+      width: 480px;
+      @include md {
+        width: 320px;
+      }
+      @include sm {
+        width: 270px;
+      }
+    }
+  }
+
+  &_info {
+    @include md {
+      text-align: center;
+    }
+    &__title {
+      margin-bottom: 45px;
+      @include md {
+        margin-bottom: 30px;
+        max-width: 700px;
+      }
+      h1 {
+        @include h1;
+      }
+      span {
+        color: #3e92cc;
+      }
+    }
+    &__presentation {
+      margin-bottom: 40px;
+      @include md {
+        margin-bottom: 35px;
+      }
+      p {
+        margin-bottom: 8px;
+        @include sm {
+          font-size: 16px;
+          margin-bottom: 14px;
+        }
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__buttons {
+      margin-top: 25px;
+      display: flex;
+      @include md {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      @include sm {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 28px;
+      }
+
+      a {
+        padding: 13px 50px;
+        background-color: $blue-lighten;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s;
+        outline: none;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        @include md {
+          padding: 13px 18px;
+        }
+        @include sm {
+          justify-content: center;
+          width: 230px;
+        }
+        &:hover {
+          background-color: #cef4fc;
+        }
+        &:active {
+          background-color: #68d4ec;
+        }
+      }
+      a.presentation_btn {
+        margin-right: 20px;
+        background-color: transparent;
+        border: 2px solid $black-lighten;
+        &:hover {
+          color: #6d6c6d;
+          border: 2px solid #6d6c6d;
+          background-color: transparent;
+        }
+        &:active {
+          color: $black;
+          border: 2px solid $black;
+          background-color: transparent;
+        }
+        img {
+          margin-left: 5px;
+        }
+        @include sm {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    &__telegram {
+      @include md {
+        margin-bottom: 100px;
+      }
+      @include sm {
+        margin-bottom: 80px;
+      }
+      p {
+        &:first-child {
+          margin-bottom: 15px;
+        }
+        @include sm {
+          font-size: 16px;
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        @include md {
+          justify-content: center;
+        }
+        img {
+          margin-right: 15px;
+        }
+        p {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
